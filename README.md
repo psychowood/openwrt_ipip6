@@ -1,9 +1,20 @@
-#openwrt_v6tunnel : user-modified script for adding IPv4/IPv6-tunnel on OpenWrt "Chaos Calmer"  
+#openwrt_v6tunnel : modified script for adding IPv4/IPv6-tunnel on OpenWrt "Chaos Calmer"  
 Make sure that you have satisfied prerequisites for the package "dslite" and proceed to copying the script "ipip6.sh" to the appropriate directories.  
 These directories on my Buffalo WZR-HP-G300NH are:  
 "/lib/netifd/proto/"  
 "/overlay/upper/lib/netifd/proto/"  
 (Maybe you just need one of them, but I haven't figured that out...)  
+The interface definition in "/etc/config/network" should then look something like:  
+__config interface 'vpn'__   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option proto 'ipip6'__  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option peer6addr '2002::dead:beef'__  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option ipaddr '172.16.0.2'__  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option peeraddr '172.16.0.1'__  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option netmask '255.255.255.252'__  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option tunlink 'wan6'__  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option mtu '1460'__  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option defaultroute '1'__  
+
 
 ##You are free to download and use this script as long as the following situations sound okay with you;
 ###Situation-1.)  
