@@ -1,4 +1,4 @@
-# openwrt_ipip6  
+# openwrt_v6tunnel  
 A user-modified script for adding IPv4/IPv6-tunnel on OpenWrt "Chaos Calmer".  
 The work is mostly based on the already-available script "dslite.sh" included in the package 'ds-lite'.  
 As for the usage of this script, copying the script "ipip6.sh" to the paths described below should be sufficient (means you really don't need any additional files besides the interface definition written in "/etc/config/network").  
