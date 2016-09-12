@@ -1,4 +1,6 @@
 #openwrt_v6tunnel : modified script for adding IPv4/IPv6-tunnel on OpenWrt "Chaos Calmer"  
+Tested on "Flet's Hikari Next" and "Flet's Hikari Lite" service by NTT-East with Buffalo WZR-HP-G300NH (and also BHR-4GRV) being the "remote" end of the tunnel, with the "local" end of the tunnel being YAMAHA RTX3000. For double-check, YAMAHA RTX3000 was also altered with Cisco 1812J and was tested okay. When used with YAMAHA RTX3000, the maximum throughput was around 98Mbps out of 100Mbps and around 60Mbps with Cisco 1812J. Both tested at MTU being 1460, and the time around 5:30 a.m. on JST (UTC+9).  
+##Usage
 Make sure that you have satisfied prerequisites for the package "dslite" and proceed to copying the script "ipip6.sh" to the appropriate directories.  
 These directories on my Buffalo WZR-HP-G300NH are:  
 "/lib/netifd/proto/"  
@@ -38,7 +40,7 @@ __config interface 'v6tunnel_v4addr'__
 
 ##You are free to download and use this script as long as the following situations sound okay with you;
 ###Situation-1.)  
-This script is based on "dslite.sh" included in "ds-lite" package, and was intentionally mod-written to satisfy my personal needs for standard IPv4/IPv6-tunnel on OpenWrt. It is confirmed to be in a working state as of Sept. 12 2016, but beware that no guarantee is expressed here. You are still free to fork it (but with full respect to the authors of work I based this script on), modify it, open issues, or submit pull-requests just as often done so in many opensource communities - yet here, expect no technical supports with formality (either from me, or OpenWrt dev team).
+This script is based on "dslite.sh" included in "ds-lite" package, and was intentionally mod-written to satisfy my personal needs for standard IPv4/IPv6-tunnel on OpenWrt. The script is confirmed to be in a working state as of Sept. 12 2016, but beware that no guarantee is expressed here. You are still free to fork it (but with full respect to the authors of work I based this script on), modify it, open issues, or submit pull-requests as often done so in many opensource communities - yet here, expect no technical supports with formality (either from me, or OpenWrt dev team).
 The attitude here is "I'll try my best to be there to help, but that's not my job."
 ###Situation-2.)  
 Writing/modifying scripts like this is often very easy (in fact, far easier than C to me), so if you feel like asking me for instructions for beginners, I strongly urge you to learn how to read it at least - I "urge" you, because they are so much fun to play with. They are called shell-scripts.
