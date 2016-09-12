@@ -3,8 +3,8 @@ Tested on "Flet's Hikari Next" and "Flet's Hikari Lite" service by NTT-East with
 ##Usage
 Make sure that you have satisfied prerequisites for the package "dslite" and proceed to copying the script "ipip6.sh" to the appropriate directories.  
 These directories on my Buffalo WZR-HP-G300NH are:  
-"/lib/netifd/proto/"  
-"/overlay/upper/lib/netifd/proto/"  
+__"/lib/netifd/proto/"__  
+__"/overlay/upper/lib/netifd/proto/"__  
 (Maybe you just need one of them, but I haven't figured that out...)  
   
 The interface definition in "/etc/config/network" should then look something like:  
