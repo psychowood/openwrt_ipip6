@@ -50,3 +50,5 @@ I don't intend to declare this with clarity, but I strongly believe that rights 
   
 I love OpenWrt, and for the love I have for it, I really don't want any troubles with potential users of the script and/or OpenWrt dev team - that's all I am saying. I guess and hope this is fair enough.
 
+##Plans
+I have renamed this repository from __openwrt_ipip6__ to __openwrt_v6tunnel__ with intentions to look into scripts for grev6 (grev6.sh) as well. There is no roadmap, but if you have specific (yet seemingly generic) needs, you are welcome to leave comments.
