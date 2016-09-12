@@ -5,7 +5,7 @@ These directories on my Buffalo WZR-HP-G300NH are:
 "/overlay/upper/lib/netifd/proto/"  
 (Maybe you just need one of them, but I haven't figured that out...)  
 The interface definition in "/etc/config/network" should then look something like:  
-__config interface 'vpn'__   
+__config interface 'v6tunnel'__   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option proto 'ipip6'__  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option peer6addr '2002::dead:beef'__  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option ipaddr '172.16.0.2'__  
@@ -14,6 +14,26 @@ __config interface 'vpn'__
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option tunlink 'wan6'__  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option mtu '1460'__  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option defaultroute '1'__  
+  
+Alternatively, you could also do(see [Static addressing of a GRE tunnel](https://wiki.openwrt.org/doc/uci/network#static_addressing_of_a_gre_tunnel)):  
+__config interface 'v6tunnel'__   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option proto 'ipip6'__  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option peer6addr '2002::dead:beef'__  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option tunlink 'wan6'__  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option mtu '1460'__  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option defaultroute '1'__  
+  
+__config interface 'v6tunnel_v4addr'__   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option proto 'static'__  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option ifname '@v6tunnel'__  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option ipaddr '172.16.0.2'__   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option netmask '255.255.255.252'__  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__# Fixes IPv6 multicast (long-standing bug in kernel).__  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__# Useful if you run Babel or OSPFv3.__  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__option ip6addr 'fe80::42/64'__  
+
+
+
 
 
 ##You are free to download and use this script as long as the following situations sound okay with you;
