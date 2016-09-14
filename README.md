@@ -1,7 +1,7 @@
 #openwrt_v6tunnel
 Tested on "Flet's Hikari Next" and "Flet's Hikari Lite" service by NTT-East with Buffalo WZR-HP-G300NH (and also BHR-4GRV) being the "remote" end of the tunnel, with the "local" end of the tunnel being YAMAHA RTX3000. For double-check, YAMAHA RTX3000 was also altered with Cisco 1812J and was tested okay. When used with YAMAHA RTX3000, the maximum throughput was around 98Mbps out of 100Mbps and around 60Mbps with Cisco 1812J. Both tested at MTU being 1460, and the time around 5:30 a.m. on JST (UTC+9).  
 ##Usage
-Make sure that you have satisfied prerequisites for the package "dslite" and proceed to copying the script "ipip6.sh" to the appropriate directories.  
+Make sure that you have satisfied prerequisites for the package "dslite" and proceed to copying the script "ipip6.sh" to the appropriate directories. (If you are unsure of the packages required, simply issue __opkg update; opkg install ds-lite__.)   
 These directories on my Buffalo WZR-HP-G300NH are:  
 __"/lib/netifd/proto/"__  
 __"/overlay/upper/lib/netifd/proto/"__  
