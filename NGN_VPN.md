@@ -1,6 +1,6 @@
 Some might ask why this is necessary, and/or if you are curious about the backgrounds for modifying the script, please read on the following.
 
-I am a happy user of OpenWrt in East Japan, whose internet connectivity is widely based on the service called "Flets's Hikari Next" by NTT-East. At home - hence the home I go back to every day - there is a decent setup of networking infrastructure, based around on the YAMAHA RTX3000 and Cisco 1812J.
+I am a happy user of OpenWrt in East Japan, whose internet connectivity is widely based on the service called "Flets's Hikari Next" by NTT-East. At home - hence the home I go back to every day - there is a decent setup of networking infrastructure, based around on the YAMAHA RTX3000, Cisco 1812J and AlaxalA AX3630S-24T.
 
 The infrastructure I depend on, hence the "Flets's Hikari Next" is rather interesting, in that the service alone merely provides the access-line to ISP, just like the way we had copper-line to reach us to the dialup endpoint of ISPs in the late 1990s. Although it does provide L3 via IPv6, you are given no connectivity to the WAN/Internet. By default, it's either an L2-mesh with PPPoE support (up to two sessions simutaneously) or an local-WAN or Wide-Area-LAN based on IPv6 - depending on how you feel like calling it. 
 
